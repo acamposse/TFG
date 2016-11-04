@@ -1,0 +1,1 @@
+{"version":3,"file":"actionTypeScript.js","sourceRoot":"","sources":["file:///c:/Users/Alvaro/Desktop/Universidad Oficial/URJC/4º Curso/TFG/TFG/WebContent/ts/actionTypeScript.ts"],"names":[],"mappings":"AAAA,IAAI,KAAK,GAAU,eAAe,CAAC;AACnC,KAAK,CAAC,KAAK,CAAC,CAAC","sourcesContent":["var curso:string = \"Yo:TypeScript\";\r\nalert(curso);\r\n"]}
