@@ -18,7 +18,7 @@
 			<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     		<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
-		<!-- <script src="ts/action.js" type="text/javascript"> </script> -->
+		 <script src="ts/action.js" type="text/javascript"> </script>
 	</head>
 
 	<body>
@@ -29,7 +29,7 @@
         	<ul class="sidebar-nav">
             	<a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
             	<li class="sidebar-brand">
-                	<h3>Menï¿½</h3>
+                	<h3 class="menu">Menï¿½</h3>
             	</li>
             	<li>
                 	<a href="#top" onclick=$("#menu-close").click();>Inicio</a>
@@ -76,7 +76,7 @@
         	<div class="container">
             	<div class="row">
                 	<div class="col-lg-10 col-lg-offset-1 text-center">
-                    	<h2>DiseÃ±e el plan de emergencia</h2>
+                    	<h2>Diseï¿½e el plan de emergencia</h2>
                     	<hr>
                     </div>
                     <!-- /.col-lg-10 -->
@@ -85,118 +85,77 @@
                     	<canvas id="canvas" class="style-panel"></canvas>
                     </div>
                     <!-- /.col-lg-8 -->
-                    
+
 					<div class="col-lg-4 text-center">
-					
+
 						<h2 class="text-left">Simbolos BPMN</h2>
-						<br>
-						<h3 class="text-left">Actividades:</h3>
+						<h4 class="text-left">Actividades:</h4>
   						<select class="selected2">
     						<option >Seleccione uno:</option>
-   	 						<option >Opción 1</option>
-    						<option >Opción 2</option>
-    						<option >Opción N</option>
+   	 						<option id="ad-hoc">Ad-hoc</option>
+    						<option >Bucle</option>
+    						<option >Bucle 2</option>
+    						<option >Compensaciï¿½n</option>
+    						<option >Instancia mï¿½ltiple</option>
+    						<option >Instancia mï¿½ltiple 2</option>
+    						<option >Sub-proceso colapsado</option>
+    						<option >Tarea</option>
   						</select>
-  						
-  						<h3 class="text-left">Conectividad:</h3>
+  						<button class="bottom-selec">Seleccionar</button>
+
+  						<h4 class="text-left">Conectividad:</h4>
+  						<select class="selected2" id="select20" onchange="conectar(this.value)">
+    						<option value="">Seleccione uno:</option>
+   	 						<option id="asociacion" value="1">Flujo asociacion</option>
+    						<option id ="mensaje" value="2">Flujo mensaje</option>
+    						<option id="secuencia" value="3">Flujo secuencia</option>
+  						</select>
+  						<button id="buttonConect" class="bottom-selec">Seleccionar</button>
+
+  						<h4 class="text-left">Eventos:</h4>
+  						<select class="selected2">
+    						<option>Seleccione uno:</option>
+   	 						<option>Inicio</option>
+    						<option>Intermedio</option>
+    						<option>Final</option>
+    						<option>Mensaje inicio</option>
+    						<option>Mensaje intermedio</option>
+    						<option>Mensaje final</option>
+    						<option>Error intermedio</option>
+    						<option>Error final</option>
+    						<option>Cancelaciï¿½n intermedia</option>
+    						<option>Cancelaciï¿½n final</option>
+    						<option>Tiempo inicial</option>
+    						<option>Tiempo intermedio</option>
+    						<option>Compensaciï¿½n intermedia</option>
+    						<option>Compensaciï¿½n final</option>
+    						<option>Vinculo inicial</option>
+    						<option>Vinculo intermedio</option>
+    						<option>Vinculo final</option>
+    						<option>Regla inicial</option>
+    						<option>Regla intermedia</option>
+    						<option>Multiple inicio</option>
+    						<option>Mï¿½ltiple intermedio</option>
+    						<option>Mï¿½ltiple final</option>
+  						</select>
+  						<button class="bottom-selec">Seleccionar</button>
+
+  						<h4 class="text-left">Nodos de decisiï¿½n:</h4>
   						<select class="selected2">
     						<option >Seleccione uno:</option>
-   	 						<option >Opción 1</option>
-    						<option >Opción 2</option>
-    						<option >Opción N</option>
+   	 						<option >Decisï¿½n basada en datos</option>
+    						<option >Decisiï¿½n basada en eventos</option>
+    						<option >Decisiï¿½n mï¿½ltiple</option>
+    						<option >Decisiï¿½n uniï¿½n compleja</option>
+    						<option >Decisiï¿½n uniï¿½n paralela</option>
+    						<option >Decisiï¿½n combinaciï¿½n inclusiva</option>
   						</select>
-  						
-  						<h3 class="text-left">Eventos:</h3>
-  						<select class="selected2">
-    						<option >Seleccione uno:</option>
-   	 						<option >Opción 1</option>
-    						<option >Opción 2</option>
-    						<option >Opción N</option>
-  						</select>
-  						
-  						<h3 class="text-left">Nodos de decisión:</h3>
-  						<select class="selected2">
-    						<option >Seleccione uno:</option>
-   	 						<option >Opción 1</option>
-    						<option >Opción 2</option>
-    						<option >Opción N</option>
-  						</select>
+  						<button class="bottom-selec">Seleccionar</button>
+
+						<canvas id="canvas2" class="style-object"></canvas>
   					</div>
-											<!-- <button class="btn btn-image btn-small">
-												<img src="img/SimbolosBPMN/Eventos/Simbolos BPMN Inicio.png">
-											</button>
-											<button class="btn btn-image btn-small">
-												<img src="img/SimbolosBPMN/Eventos/Simbolos BPMN Intermedio.png">
-											</button>
-											<button class="btn btn-image btn-small">
-												<img src="img/SimbolosBPMN/Eventos/Simbolos BPMN Fin.png">
-											</button>
-											<button class="btn btn-image btn-small">
-												<img src="img/SimbolosBPMN/Actividades/Simbolos BPMN Ad-hoc.png">
-											</button>
-											<button class="btn btn-image btn-small">
-												<img src="img/SimbolosBPMN/Actividades/Simbolos BPMN Ad-hoc.png">
-											</button>
-											<button class="btn btn-image btn-small">
-												<img src="img/SimbolosBPMN/Actividades/Simbolos BPMN Ad-hoc.png">
-											</button>
-											<button class="btn btn-image btn-small">
-												<img src="img/SimbolosBPMN/Actividades/Simbolos BPMN Ad-hoc.png">
-											</button>
-											<button class="btn btn-image btn-small">
-												<img src="img/SimbolosBPMN/Actividades/Simbolos BPMN Ad-hoc.png">
-											</button>
-											<button class="btn btn-image btn-small">
-												<img src="img/SimbolosBPMN/Actividades/Simbolos BPMN Ad-hoc.png">
-											</button>
-											<button class="btn btn-image btn-small">
-												<img src="img/SimbolosBPMN/Actividades/Simbolos BPMN Ad-hoc.png">
-											</button>
-											<button class="btn btn-image btn-small">
-												<img src="img/SimbolosBPMN/Actividades/Simbolos BPMN Ad-hoc.png">
-											</button>
-											<button class="btn btn-image btn-small">
-												<img src="img/SimbolosBPMN/Actividades/Simbolos BPMN Ad-hoc.png">
-											</button>
-											<button class="btn btn-image btn-small">
-												<img src="img/SimbolosBPMN/Actividades/Simbolos BPMN Ad-hoc.png">
-											</button>
-											<button class="btn btn-image btn-small">
-												<img src="img/SimbolosBPMN/Actividades/Simbolos BPMN Ad-hoc.png">
-											</button>
-											<button class="btn btn-image btn-small">
-												<img src="img/SimbolosBPMN/Actividades/Simbolos BPMN Ad-hoc.png">
-											</button>
 
 
-											<button class="btn btn-image btn-big">
-												<img src="img/SimbolosBPMN/NodosDeDecision/BasadaEnDatos.png">
-											</button>
-											<button class="btn btn-image btn-big">
-												<img src="img/SimbolosBPMN/NodosDeDecision/BasadaEnEventos.png">
-											</button>
-											<button class="btn btn-image btn-big">
-												<img src="img/SimbolosBPMN/NodosDeDecision/Decision-unionCompleja.png">
-											</button>
-											<button class="btn btn-image btn-big">
-												<img src="img/SimbolosBPMN/NodosDeDecision/Decision-unionParalela.png">
-											</button>
-											<button class="btn btn-image btn-big">
-												<img src="img/SimbolosBPMN/NodosDeDecision/DecisionoCombinacionInclusiva.png">
-											</button>
-
-											<button class="btn btn-image btn-big">
-												<img src="img/SimbolosBPMN/Conectividad/FlujoSecuencia.png">
-											</button>
-											<button class="btn btn-image btn-big">
-												<img src="img/SimbolosBPMN/Conectividad/FlujoMensaje.png">
-											</button>
-											<button class="btn btn-image btn-big">
-												<img src="img/SimbolosBPMN/Conectividad/FlujoAsociacion.png">
-											</button>
-											-->
-
-										
 										<!-- /.col-lg-4 -->
 
                     <div class="container2">

@@ -42,11 +42,14 @@ body{
 	height:100%;
 }
 */
+.menu {
+	color: white;
+}
 
 .selected2 {
   border: 1px solid #ccc;
-  width: 300px;
-  height: 40px;
+  width: 240px;
+  height: 30px;
   margin: 9px auto 2px;
   box-shadow: 3px 3px 10px black;
   overflow: hidden;
@@ -57,7 +60,7 @@ body{
     padding: 5px 8px;
     width: 130%;
     border: none;
-    box-shadow: none;
+    box-shadow: 3px 3px 10px black;
     background-color: transparent;
     background-image: none;
     box-shadow: 3px 3px 10px black;
@@ -68,9 +71,17 @@ body{
 
 .style-panel{
 	width:100%;
-	height: 1066px;
+	height: 660px;
 	background-color: white;
 	box-shadow: 3px 3px 10px black;
+}
+
+.style-object {
+	width:210px;
+	height: 175px;
+	background-color: white;
+	box-shadow: 3px 3px 10px black;
+	margin-top: 30px;
 }
 
 .navbar-btn{
@@ -93,6 +104,18 @@ body{
 	box-shadow: 3px 3px 10px black;
 	border-radius: 5px;
 	width:210px;
+}
+.bottom-selec {
+	background: #fff;
+	color: #000;
+	display: inline-block;
+	margin: 10px;
+	padding: 5px;
+	text-align: center;
+	text-decoration: none;
+	box-shadow: 3px 3px 10px black;
+	border-radius: 5px;
+	width:95px;
 }
 
 .bottom-paleta {
